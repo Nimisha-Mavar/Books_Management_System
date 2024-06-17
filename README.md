@@ -14,3 +14,5 @@ MERN
        npm init -y
 ### 2. Install mongoos and express 
        npm i mongoose express
+### 3. Run backend file 'server.js'
+       node server.js
