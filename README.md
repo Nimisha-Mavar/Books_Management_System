@@ -17,9 +17,11 @@ MERN
 ### 3. Run backend file 'server.js'
        node server.js
 ### 4. Install nodemon globally for automatic run server.js file on save
-#### 4.1. install nodemon 
+#### 4.1 install nodemon 
        npm i -g nodemon
-#### 4.2. Add bellow code to package.json file
+#### 4.2 Add bellow code to package.json file
        "scripts": {
               "server": "nodemon server.js"
-       }    
+       }
+#### 4.3 Add bellow code to package.json file
+      npm run dev
