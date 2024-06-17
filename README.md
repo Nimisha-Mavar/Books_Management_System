@@ -23,5 +23,5 @@ MERN
        "scripts": {
               "server": "nodemon server.js"
        }
-#### 4.3 Add bellow code to package.json file
+#### 4.3 run server
       npm run dev
