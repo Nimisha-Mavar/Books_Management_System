@@ -25,3 +25,10 @@ MERN
        }
 #### 4.3 run server
       npm run dev
+
+## Front-end(Folder:Client)
+### 1. Create react app
+       npm create vite@latest
+### 2. Install node modules and run app
+       npm install
+       npm run dev
