@@ -21,7 +21,7 @@ MERN
        npm i -g nodemon
 #### 4.2 Add bellow code to package.json file
        "scripts": {
-              "server": "nodemon server.js"
+              "dev": "nodemon server.js"
        }
 #### 4.3 run server
       npm run dev
@@ -47,3 +47,5 @@ MERN
 ### 4. Connect frontend to backend
 #### 4.1 Install axis foe API calling 
        npm install axios
+#### 4.2 For allow Cross origin acces
+       npm install cors
