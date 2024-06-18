@@ -26,6 +26,10 @@ MERN
 #### 4.3 run server
       npm run dev
 
+### 5. for use module import structure add following in package.json
+       //example : import cors from "cors"
+       "type": "module"
+
 ## Front-end(Folder:Client)
 ### 1. Create react app
        npm create vite@latest
@@ -48,4 +52,18 @@ MERN
 #### 4.1 Install axis foe API calling 
        npm install axios
 #### 4.2 For allow Cross origin acces
+##### 4.2.1 install cors in backend(folder:API)
        npm install cors
+##### 4.2.2 add following code snipat in server.js(API's)
+       import cors from "cors"
+
+       //for allow front end access
+       app.use(
+         cors({
+           origin: true,
+           methods: ["GET", "POST", "PUT", "DELETE"],
+           credentials: true,
+         })
+       );
+
+
