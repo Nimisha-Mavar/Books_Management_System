@@ -19,8 +19,8 @@ app.get("/", async (req, res) => {
   try {
     let books = await Books.find();
     res.json(console.log({ message: "Books found", books }));
-  } catch (err) {
-    res.json(console.log("book not foud"));
+  } catch (error) {
+    res.json(console.log({ message: error.message }));
   }
 });
 
@@ -38,11 +38,39 @@ app.post("/", async (req, res) => {
     });
     res.json({ message: "Book added successfully", book });
   } catch (error) {
-    res.json({ message: error.message() });
+    res.json(console.log({ message: error.message }));
   }
 });
+
 //delete book
+app.delete("/:bid", async (req, res) => {
+  const id = req.params.bid;
+  try {
+    let book = await Books.findById(id);
+    if (!book) return res.json({ message: "book not exist" });
+    else {
+      await book.deleteOne();
+      res.json({ message: "book deleted successfully" });
+    }
+  } catch (error) {
+    res.json(console.log({ message: error.message }));
+  }
+});
 
 //update book
+app.put("/:bid", async (req, res) => {
+  const id = req.params.bid;
+  const updatedBook = req.body;
+  try {
+    const book = await Books.findById(id);
+    if (!book) return res.json({ message: "Book not exist" });
+    else {
+      let data = await Books.findByIdAndUpdate(id, updatedBook, { new: true });
+      res.json(console.log({ message: "Book Updated Successfully", data }));
+    }
+  } catch (error) {
+    res.json(console.log({ message: error.message }));
+  }
+});
 
 app.listen(2000, () => console.log("Server is runing on 2000"));
