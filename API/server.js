@@ -2,9 +2,13 @@ import express from "express";
 import mongoose from "mongoose";
 import { Books } from "./BookModel.js";
 import bodyParsher from "express";
+import cors from "cors";
 
 const app = express();
+
+//for use json in app
 app.use(bodyParsher.json());
+
 //connect mongoodb database
 mongoose
   .connect(
@@ -14,13 +18,22 @@ mongoose
   .then(() => console.log("MongoDB connected succesfully"))
   .catch((err) => console.log(err));
 
+//for allow front end access
+app.use(
+  cors({
+    origin: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 //get all books
 app.get("/", async (req, res) => {
   try {
     let books = await Books.find();
-    res.json(console.log({ message: "Books found", books }));
+    res.json({ message: "Books found", books });
   } catch (error) {
-    res.json(console.log({ message: error.message }));
+    res.json({ message: error.message });
   }
 });
 
@@ -38,7 +51,7 @@ app.post("/", async (req, res) => {
     });
     res.json({ message: "Book added successfully", book });
   } catch (error) {
-    res.json(console.log({ message: error.message }));
+    res.json({ message: error.message });
   }
 });
 
@@ -53,7 +66,7 @@ app.delete("/:bid", async (req, res) => {
       res.json({ message: "book deleted successfully" });
     }
   } catch (error) {
-    res.json(console.log({ message: error.message }));
+    res.json({ message: error.message });
   }
 });
 
@@ -66,10 +79,10 @@ app.put("/:bid", async (req, res) => {
     if (!book) return res.json({ message: "Book not exist" });
     else {
       let data = await Books.findByIdAndUpdate(id, updatedBook, { new: true });
-      res.json(console.log({ message: "Book Updated Successfully", data }));
+      res.json({ message: "Book Updated Successfully", data });
     }
   } catch (error) {
-    res.json(console.log({ message: error.message }));
+    res.json({ message: error.message });
   }
 });
 
