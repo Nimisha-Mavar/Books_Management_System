@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Book from "./Book";
+import Navbar from "./Navbar";
 const App = () => {
   const Url = "http://localhost:2000";
   const [books, setBooks] = useState([]);
@@ -18,9 +20,10 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Hi</h1>
-    </div>
+    <>
+      <Navbar></Navbar>
+      <Book books={books}></Book>
+    </>
   );
 };
 
