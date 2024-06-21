@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Book from "./Book";
 import Navbar from "./Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const Url = "http://localhost:2000";
   const [books, setBooks] = useState([]);
@@ -22,6 +24,7 @@ const App = () => {
 
   return (
     <>
+      <ToastContainer />
       <Navbar reload={reload} setReload={setReload}></Navbar>
       <Book books={books} reload={reload} setReload={setReload}></Book>
     </>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const url = "http://localhost:2000";
 const Navbar = ({ reload, setReload }) => {
@@ -21,6 +23,17 @@ const Navbar = ({ reload, setReload }) => {
       }
     );
     console.log(api);
+    toast.success(api.data.message, {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
     setVisible(false);
     setReload(!reload);
   };

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Book = ({ books, reload, setReload }) => {
   const [visible, setVisible] = useState(false);
@@ -31,6 +33,17 @@ const Book = ({ books, reload, setReload }) => {
       },
     });
     console.log(api);
+    toast.error(api.data.message, {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
     setReload(!reload);
   };
 
@@ -46,6 +59,17 @@ const Book = ({ books, reload, setReload }) => {
       }
     );
     console.log(u_api);
+    toast.success(u_api.data.message, {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   return (
