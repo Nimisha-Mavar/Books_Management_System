@@ -23,7 +23,7 @@ const App = () => {
   return (
     <>
       <Navbar reload={reload} setReload={setReload}></Navbar>
-      <Book books={books}></Book>
+      <Book books={books} reload={reload} setReload={setReload}></Book>
     </>
   );
 };

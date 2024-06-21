@@ -30,7 +30,7 @@ app.use(
 //get all books
 app.get("/", async (req, res) => {
   try {
-    let books = await Books.find();
+    let books = await Books.find().sort({ created_At: -1 });
     res.json({ message: "Books found", books });
   } catch (error) {
     res.json({ message: error.message });

@@ -19,7 +19,7 @@ const BookSchema = new mongoose.Schema({
   },
   created_At: {
     type: Date,
-    require: true,
+    default: Date.now(),
   },
 });
 
