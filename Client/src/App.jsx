@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 const App = () => {
   const Url = "http://localhost:2000";
   const [books, setBooks] = useState([]);
+  const [reload, setReload] = useState(false);
 
   useEffect(() => {
     const fatchdata = async () => {
@@ -17,11 +18,11 @@ const App = () => {
       setBooks(Api.data.books);
     };
     fatchdata();
-  }, []);
+  }, [reload]);
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar reload={reload} setReload={setReload}></Navbar>
       <Book books={books}></Book>
     </>
   );

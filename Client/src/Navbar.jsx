@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const url = "http://localhost:2000";
-const Navbar = () => {
+const Navbar = ({ reload, setReload }) => {
   const [visible, setVisible] = useState(false);
   const [Book_name, setBook_name] = useState("");
   const [Book_publisher, setBook_publisher] = useState("");
@@ -22,6 +22,7 @@ const Navbar = () => {
     );
     console.log(api);
     setVisible(false);
+    setReload(!reload);
   };
 
   return (
