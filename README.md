@@ -71,10 +71,10 @@ MERN
 <kbd>![image](https://github.com/Nimisha-Mavar/Books_Management_System/assets/112267753/26dedaff-5df6-4276-9a6f-f39c844e20ed)</kbd>
 
 ### Add book
-![image](https://github.com/Nimisha-Mavar/Books_Management_System/assets/112267753/a0aec7cc-8d73-4d99-b1f2-ad2fcb5fda98)
+<kbd>![image](https://github.com/Nimisha-Mavar/Books_Management_System/assets/112267753/a0aec7cc-8d73-4d99-b1f2-ad2fcb5fda98)</kbd>
 
 ### Update book
-![image](https://github.com/Nimisha-Mavar/Books_Management_System/assets/112267753/00bf0716-fab2-40a6-8d7f-8966365f70f0)
+<kbd>![image](https://github.com/Nimisha-Mavar/Books_Management_System/assets/112267753/00bf0716-fab2-40a6-8d7f-8966365f70f0)</kbd>
 
 ### Delete book
-![image](https://github.com/Nimisha-Mavar/Books_Management_System/assets/112267753/9e540ec1-0a79-4b02-a16d-aa627589753c)
+<kbd>![image](https://github.com/Nimisha-Mavar/Books_Management_System/assets/112267753/9e540ec1-0a79-4b02-a16d-aa627589753c)</kbd>
